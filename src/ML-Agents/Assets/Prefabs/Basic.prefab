@@ -871,7 +871,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 0}
+  m_Model: {fileID: 5022602860645237092, guid: af89d8a41efc2044a833d17a7a97a5ad, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: BasicAgent
@@ -895,6 +895,7 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 20000
+  movementSpeed: 5
   target: {fileID: 8307001517233711778}
   environment: {fileID: 4126406706351401763}
   result: {fileID: 1729759928520744215}

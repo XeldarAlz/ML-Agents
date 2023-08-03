@@ -9,6 +9,7 @@ src/**/[Bb]uild/
 src/**/[Bb]uilds/
 src/**/[Ll]ogs/
 src/**/[Mm]emoryCaptures/
+venv
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !src/**/[Aa]ssets/**/*.meta
