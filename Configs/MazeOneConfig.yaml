@@ -3,22 +3,22 @@ behaviors:
   MazeOne:
     trainer_type: ppo
     hyperparameters:
-      batch_size: 1024
-      buffer_size: 10240
-      learning_rate: 0.0003
-      beta: 0.005
-      epsilon: 0.2
-      lambd: 0.95
-      num_epoch: 3
+      batch_size: 2048  # Larger batch size could improve stability of learning
+      buffer_size: 20480  # Increase buffer size proportional to batch size
+      learning_rate: 0.0003  # Try different learning rates, if learning is too slow, increase this
+      beta: 0.005  # Keep unchanged unless you find issues with exploration/exploitation balance
+      epsilon: 0.2  # Keep unchanged unless you find issues with exploration/exploitation balance
+      lambd: 0.95  # Keep unchanged unless there's a high variance in the return
+      num_epoch: 5  # More epochs might improve learning at the cost of longer training time
       learning_rate_schedule: linear
     network_settings:
-      normalize: false
-      hidden_units: 256
-      num_layers: 3
-      vis_encode_type: simple
+      normalize: true  # Normalizing inputs can often help with learning
+      hidden_units: 512  # More hidden units can capture more complex functions, at the risk of overfitting
+      num_layers: 3  # More layers can capture more complex functions, at the risk of overfitting
+      vis_encode_type: simple 
     reward_signals:
       extrinsic:
-        gamma: 0.99
+        gamma: 0.99  # The closer to 1, the more the agent cares about long-term rewards
         strength: 1.0
     init_path: null
     keep_checkpoints: 5
@@ -47,6 +47,4 @@ checkpoint_settings:
   train_model: true
   inference: false
   results_dir: results
-torch_settings:
-  device: null
 debug: false
